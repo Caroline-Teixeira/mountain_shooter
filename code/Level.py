@@ -9,8 +9,10 @@ from pygame.font import Font
 
 from code import Entity
 from code.Const import COLOR_WHITE, MENU_OPTION, EVENT_ENEMY
+from code.Enemy import Enemy
 from code.EntityFactory import EntityFactory
 from code.EntityMediator import EntityMediator
+from code.Player import Player
 
 
 class Level:
@@ -36,6 +38,11 @@ class Level:
             for ent in self.entity_list:  # desenho
                 self.window.blit(source=ent.surf, dest=ent.rect)  # aqui eu desenho minhas entidades
                 ent.move()  # movimento da imagem
+
+                if isinstance(ent, (Player, Enemy)):  # entidades que podem atirar
+                    shoot = ent.shoot()
+                    if shoot is not None:
+                        self.entity_list.append(shoot)  # tiros
                 # print(clock.get_fps())  # verificar o FPS
 
             # Texto para ser exibido na tela

@@ -1,5 +1,8 @@
+from code.Const import WIN_WIDTH
 from code.Enemy import Enemy
+from code.EnemyShot import EnemyShot
 from code.Entity import Entity
+from code.PlayerShot import PlayerShot
 
 
 class EntityMediator:  # Para mediar colisões
@@ -8,6 +11,14 @@ class EntityMediator:  # Para mediar colisões
         if isinstance(ent, Enemy):
             if ent.rect.right <= 0:  # passou da tela
                 # print(ent.name)
+                ent.health = 0
+
+        if isinstance(ent, PlayerShot):  # Tiros
+            if ent.rect.left >= WIN_WIDTH:
+                ent.health = 0
+
+        if isinstance(ent, EnemyShot):  # Tiros do inimigo
+            if ent.rect.right <= 0:
                 ent.health = 0
 
     @staticmethod
