@@ -10,6 +10,8 @@ COLOR_ORANGE = (255, 100, 10)
 COLOR_RED = (255, 0, 10)
 COLOR_WHITE = (230, 230, 230)
 COLOR_YELLOW = (252, 250, 110)
+COLOR_GREEN = (0, 128, 0)
+COLOR_CYAN = (0, 128, 128)
 
 # Texto do menu
 MENU_OPTION = ('NEW GAME 1P',
@@ -53,6 +55,42 @@ ENTITY_HEALTH = {'Level1Bg0': 999,
                  'Enemy2': 200,
                  'Enemy2Shot': 1,
                  }
+
+# Dano
+ENTITY_DAMAGE = {'Level1Bg0': 0,
+                 'Level1Bg1': 0,
+                 'Level1Bg2': 0,
+                 'Level1Bg3': 0,
+                 'Level1Bg4': 0,
+                 'Level1Bg5': 0,
+                 'Level1Bg6': 0,
+                 'Player1Shot': 25,
+                 'Player1': 1,
+                 'Player2Shot': 25,
+                 'Player2': 300,
+                 'Enemy1': 200,
+                 'Enemy1Shot': 20,
+                 'Enemy2': 1,
+                 'Enemy2Shot': 15,
+                 }
+
+# SCORE
+ENTITY_SCORE = {'Level1Bg0': 0,
+               'Level1Bg1': 0,
+               'Level1Bg2': 0,
+               'Level1Bg3': 0,
+               'Level1Bg4': 0,
+               'Level1Bg5': 0,
+               'Level1Bg6': 0,
+               'Player1Shot': 0,
+               'Player1': 0,
+               'Player2Shot': 0,
+               'Player2': 0,
+               'Enemy1': 100,
+               'Enemy1Shot': 0,
+               'Enemy2': 150,
+               'Enemy2Shot': 0,
+               }
 
 # TECLAS DE MOVIMENTO
 PLAYER_KEY_UP = {'Player1': pygame.K_UP,
