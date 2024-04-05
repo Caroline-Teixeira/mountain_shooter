@@ -21,8 +21,12 @@ class Game:
             menu_return = menu.run()
 
             if menu_return in [MENU_OPTION[0], MENU_OPTION[1], MENU_OPTION[2]]:  # se selecionar as opções do menu
-                level = Level(self.window, 'Level1', menu_return)  # cria uma nova fase
-                level_return = level.run()
+                player_score = [0, 0]  # uma posição para cada jogador
+                level = Level(self.window, 'Level1', menu_return, player_score)  # cria uma nova fase
+                level_return = level.run(player_score)
+                if level_return:  # passou de fase
+                    level = Level(self.window, 'Level2', menu_return, player_score)
+                    level_return = level.run(player_score)
 
             else:  # se selecionar o EXIT
                 pygame.quit()
